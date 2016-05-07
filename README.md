@@ -7,5 +7,7 @@
 #import "UIView+ZLVideoPlayerView.h"
 '''
 '''objc
+
 [self.playView zl_setVideoPlayerViewWithUrl:@"http://baobab.wdjcdn.com/1462506457051glove_x264.mp4"];
+
 '''
