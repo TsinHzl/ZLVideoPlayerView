@@ -237,7 +237,7 @@
 				TargetAttributes = {
 					EAEE07121CDDC713005A2A0F = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = PYT22V978U;
+						DevelopmentTeam = 39J7ARRJF8;
 					};
 					EAEE072B1CDDC714005A2A0F = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -452,7 +452,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 39J7ARRJF8;
 				INFOPLIST_FILE = ZLVideoPlayerViewExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MacTsin.ZLVideoPlayerViewExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -464,7 +466,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 39J7ARRJF8;
 				INFOPLIST_FILE = ZLVideoPlayerViewExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MacTsin.ZLVideoPlayerViewExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
