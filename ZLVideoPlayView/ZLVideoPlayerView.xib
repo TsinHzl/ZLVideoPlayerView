@@ -1,8 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -13,14 +17,12 @@
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ZLVideoPlayView.bundle/bg_media_default.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="xk1-zi-ZtK" userLabel="playImage">
                     <rect key="frame" x="0.0" y="0.0" width="490" height="314"/>
-                    <animations/>
                 </imageView>
                 <view alpha="0.65000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Azv-16-BaN" userLabel="toolbar">
                     <rect key="frame" x="0.0" y="274" width="490" height="40"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SDL-7w-DLP" userLabel="播放/暂停">
                             <rect key="frame" x="0.0" y="0.0" width="50" height="40"/>
-                            <animations/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="50" id="opf-eT-KgX"/>
                             </constraints>
@@ -32,7 +34,6 @@
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7EG-HF-d4Q" userLabel="全屏">
                             <rect key="frame" x="440" y="0.0" width="50" height="40"/>
-                            <animations/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="50" id="8wz-qH-Vmj"/>
                             </constraints>
@@ -42,21 +43,19 @@
                                 <action selector="fullScreenBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="Ib5-Ta-xQC"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:0:0/0:00:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9my-8a-IBK" userLabel="时间">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:0:0/0:0:0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9my-8a-IBK" userLabel="时间">
                             <rect key="frame" x="315" y="0.0" width="120" height="40"/>
-                            <animations/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="120" id="4oq-o9-D0c"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="csO-wV-fVC" userLabel="进度条">
                             <rect key="frame" x="53" y="0.0" width="309" height="41"/>
-                            <animations/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <color key="tintColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="progressValueChage:" destination="iN0-l3-epB" eventType="valueChanged" id="R5o-jF-6u6"/>
                                 <action selector="slide" destination="iN0-l3-epB" eventType="touchUpInside" id="Re4-wF-Yts"/>
@@ -64,9 +63,8 @@
                             </connections>
                         </slider>
                     </subviews>
-                    <animations/>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="csO-wV-fVC" firstAttribute="top" secondItem="Azv-16-BaN" secondAttribute="top" id="0ed-Vz-J7e"/>
                         <constraint firstItem="7EG-HF-d4Q" firstAttribute="leading" secondItem="9my-8a-IBK" secondAttribute="trailing" constant="5" id="4Un-kW-8Y7"/>
@@ -92,15 +90,13 @@
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tt2-mZ-dQv" userLabel="back">
                     <rect key="frame" x="10" y="10" width="35" height="35"/>
-                    <animations/>
                     <state key="normal" image="ZLVideoPlayView.bundle/show_image_back_icon.png"/>
                     <connections>
                         <action selector="backButtonClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="Umr-3W-R1E"/>
                     </connections>
                 </button>
             </subviews>
-            <animations/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="Azv-16-BaN" secondAttribute="bottom" id="3pk-eq-ndQ"/>
                 <constraint firstItem="xk1-zi-ZtK" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="5J3-o6-wvD"/>

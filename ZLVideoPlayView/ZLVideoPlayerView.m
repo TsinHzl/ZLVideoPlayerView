@@ -13,6 +13,7 @@ NSString * const ZLVideoPlayerViewIsFullScreenNotification = @"ZLIsFullScreenNot
 NSString * const ZLVideoPlayerViewIsFullScreenNotificationParamsName = @"ZLIsFullScreen";
 static CGFloat const ZLTimeInterval = 0.65;
 static CGFloat const ZLAlpha = 0.65;
+static CGFloat const ZLDeltaTime = 15.0;
 
 @interface ZLVideoPlayerView()
 /** xib属性 */
@@ -131,26 +132,39 @@ static CGFloat const ZLAlpha = 0.65;
     tapGr.numberOfTapsRequired = 2;
     [self addGestureRecognizer:tapGr];
     
-    UISwipeGestureRecognizer *swipeGr = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipe:)];
-//    swipeGr.direction = UISwipeGestureRecognizerDirectionRight | UISwipeGestureRecognizerDirectionLeft;
+    //添加做滑动手势
+    UISwipeGestureRecognizer *leftSwipeGr = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(leftSwipe:)];
+    leftSwipeGr.direction = UISwipeGestureRecognizerDirectionRight;
 //    swipeGr.numberOfTouchesRequired = 1;
-    [self addGestureRecognizer:swipeGr];
+    [self addGestureRecognizer:leftSwipeGr];
+    
+    //添加右滑动手势
+    UISwipeGestureRecognizer *rightSwipeGr = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(rightSwipe:)];
+    leftSwipeGr.direction = UISwipeGestureRecognizerDirectionLeft;
+    //    swipeGr.numberOfTouchesRequired = 1;
+    [self addGestureRecognizer:rightSwipeGr];
 }
 //双击手势响应事件
 - (void)twiceTap:(UITapGestureRecognizer *)gr
 {
     [self playBtn:self.playPauseBtn];
 }
-
+//滑动手势响应事件
+- (void)rightSwipe:(UISwipeGestureRecognizer *)gr {
+    [self swipe:gr];
+}
+- (void)leftSwipe:(UISwipeGestureRecognizer *)gr {
+    [self swipe:gr];
+}
 - (void)swipe:(UISwipeGestureRecognizer *)gr
 {
     CGFloat delta = 0;
     NSTimeInterval c = CMTimeGetSeconds(self.player.currentTime);
     NSTimeInterval d = CMTimeGetSeconds(self.player.currentItem.duration);
     if (gr.direction == UISwipeGestureRecognizerDirectionLeft) {
-        delta = (c < 5.0 ? -c : -5.0);
+        delta = (c < ZLDeltaTime ? -c : -ZLDeltaTime);
     }else if (gr.direction == UISwipeGestureRecognizerDirectionRight) {
-        delta = ((d-c) < 5.0 ? (d-c) : 5.0);
+        delta = ((d-c) < ZLDeltaTime ? (d-c) : ZLDeltaTime);
     }
     NSTimeInterval currentTime = CMTimeGetSeconds(self.player.currentTime) + delta;
     NSTimeInterval duration = CMTimeGetSeconds(self.player.currentItem.duration);
