@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class ZLVideoPlayerView;
 
 @interface ZLFullViewController : UIViewController
+
+/* playerView */
+@property(nonatomic, weak)ZLVideoPlayerView *playerView;
 
 @end

@@ -8,6 +8,7 @@
 
 #import "ZLVideoPlayerView.h"
 #import "ZLFullViewController.h"
+#import "AppDelegate.h"
 
 NSString * const ZLVideoPlayerViewIsFullScreenNotification = @"ZLIsFullScreenNotification";
 NSString * const ZLVideoPlayerViewIsFullScreenNotificationParamsName = @"ZLIsFullScreen";
@@ -66,21 +67,6 @@ static CGFloat const ZLDeltaTime = 15.0;
     }
     return _screenW;
 }
-- (UIWindow *)fullWindow
-{
-    if (!_fullWindow) {
-        self.fullWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-        ZLFullViewController *vc = [[ZLFullViewController alloc] init];
-        UIView *bgView = [[UIView alloc] init];
-        bgView.frame = CGRectMake(0, 0, self.screenH , self.screenH);
-        bgView.backgroundColor = [UIColor redColor];
-        bgView.center = vc.view.center;
-        [vc.view addSubview:bgView];
-        self.fullWindow.rootViewController = vc;
-    }
-    return _fullWindow;
-}
-
 - (AVPlayer *)player
 {
     if (!_player) {
@@ -198,21 +184,22 @@ static CGFloat const ZLDeltaTime = 15.0;
 - (IBAction)fullScreenBtn:(UIButton *)sender {
     sender.selected = !sender.selected;
     if (sender.selected) {
+        //设置允许全屏显示
+        [self setFullScreen:YES];
+        //设置fullWindow
         self.smallF = self.frame;
         self.sView = self.superview;
         [self removeFromSuperview];
-        self.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size
-                                .height, [UIScreen mainScreen].bounds.size.width);
-        self.center = CGPointMake(self.screenH*0.5, self.screenH*0.5);
-        [self.fullWindow.rootViewController.view.subviews[0] addSubview:self];
+        self.fullWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        ZLFullViewController *vc = [[ZLFullViewController alloc] init];
+        vc.playerView = self;
+        self.fullWindow.rootViewController = vc;
         self.fullWindow.hidden = NO;
-        CGAffineTransform transform = self.fullWindow.rootViewController.view.subviews[0].transform;
-        transform = CGAffineTransformRotate(transform, M_PI/2);
-        self.fullWindow.rootViewController.view.subviews[0].transform = transform;
         self.backButton.hidden = NO;
         /** 发送全屏通知 */
         [[NSNotificationCenter defaultCenter] postNotificationName:ZLVideoPlayerViewIsFullScreenNotification object:nil userInfo:@{ZLVideoPlayerViewIsFullScreenNotificationParamsName : @1}];
     }else {
+        
         [self removeFromSuperview];
         self.frame = self.smallF;
         [self.sView addSubview:self];
@@ -220,6 +207,8 @@ static CGFloat const ZLDeltaTime = 15.0;
         self.fullWindow.rootViewController = nil;
         self.fullWindow = nil;
         self.backButton.hidden = YES;
+        //设置不允许全屏显示
+        [self setFullScreen:NO];
          /** 发送全屏通知 */
         [[NSNotificationCenter defaultCenter] postNotificationName:ZLVideoPlayerViewIsFullScreenNotification object:nil userInfo:@{ZLVideoPlayerViewIsFullScreenNotificationParamsName : @0}];
     }
@@ -369,5 +358,15 @@ static CGFloat const ZLDeltaTime = 15.0;
     BOOL intersects = CGRectIntersectsRect(newFrame, winBounds);
     
     return !self.isHidden && self.alpha > 0.01 && self.window == keyWindow && intersects;
+}
+
+/**
+ 设置是否允许全屏显示
+
+ @param isFullScreen 是否全屏显示
+ */
+- (void)setFullScreen:(BOOL)isFullScreen {
+    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
+    delegate.allowRotation = isFullScreen;
 }
 @end
