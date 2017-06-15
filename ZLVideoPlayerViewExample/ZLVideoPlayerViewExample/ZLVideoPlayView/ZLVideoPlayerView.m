@@ -196,8 +196,8 @@ static CGFloat const ZLDeltaTime = 15.0;
         self.fullWindow.rootViewController = vc;
         self.fullWindow.hidden = NO;
         self.backButton.hidden = NO;
-//        /** 发送全屏通知 */
-//        [[NSNotificationCenter defaultCenter] postNotificationName:ZLVideoPlayerViewIsFullScreenNotification object:nil userInfo:@{ZLVideoPlayerViewIsFullScreenNotificationParamsName : @1}];
+        /** 发送全屏通知 */
+        [[NSNotificationCenter defaultCenter] postNotificationName:ZLVideoPlayerViewIsFullScreenNotification object:nil userInfo:@{ZLVideoPlayerViewIsFullScreenNotificationParamsName : @1}];
     }else {
         
         [self removeFromSuperview];
@@ -209,8 +209,8 @@ static CGFloat const ZLDeltaTime = 15.0;
         self.backButton.hidden = YES;
         //设置不允许全屏显示
         [self setFullScreen:NO];
-//         /** 发送全屏通知 */
-//        [[NSNotificationCenter defaultCenter] postNotificationName:ZLVideoPlayerViewIsFullScreenNotification object:nil userInfo:@{ZLVideoPlayerViewIsFullScreenNotificationParamsName : @0}];
+         /** 发送全屏通知 */
+        [[NSNotificationCenter defaultCenter] postNotificationName:ZLVideoPlayerViewIsFullScreenNotification object:nil userInfo:@{ZLVideoPlayerViewIsFullScreenNotificationParamsName : @0}];
     }
 }
 
