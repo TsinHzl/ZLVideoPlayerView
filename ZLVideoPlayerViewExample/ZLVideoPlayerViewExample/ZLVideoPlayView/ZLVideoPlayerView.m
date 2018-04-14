@@ -12,6 +12,7 @@
 
 NSString * const ZLVideoPlayerViewIsFullScreenNotification = @"ZLIsFullScreenNotification";
 NSString * const ZLVideoPlayerViewIsFullScreenNotificationParamsName = @"ZLIsFullScreen";
+
 static CGFloat const ZLTimeInterval = 0.65;
 static CGFloat const ZLAlpha = 0.65;
 static CGFloat const ZLDeltaTime = 15.0;
@@ -366,7 +367,7 @@ static CGFloat const ZLDeltaTime = 15.0;
  @param isFullScreen 是否全屏显示
  */
 - (void)setFullScreen:(BOOL)isFullScreen {
-    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
+    AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     delegate.allowRotation = isFullScreen;
 }
 @end

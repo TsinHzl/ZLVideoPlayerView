@@ -37,6 +37,8 @@ static CGFloat const ZLDeltaTime = 15.0;
 @property (nonatomic, strong) NSTimer *progressTimer;
 /** 监听定时器 */
 @property (nonatomic, strong) NSTimer *timer;
+/** toolbar消失监听定时器 */
+@property (nonatomic, strong) NSTimer *hideToolbarTimer;
 /** 全屏的window */
 @property (nonatomic, strong) UIWindow *fullWindow;
 /** smallF */
@@ -91,6 +93,7 @@ static CGFloat const ZLDeltaTime = 15.0;
 {
     [super awakeFromNib];
     
+    [self settingPlaySoundUnderMuteMode];
     [self setupView];
 }
 - (void)layoutSubviews
@@ -111,6 +114,7 @@ static CGFloat const ZLDeltaTime = 15.0;
     [self addGeustures];
    
 }
+#pragma mark - 手势
 - (void)addGeustures
 {
     //添加双击手势
@@ -162,12 +166,21 @@ static CGFloat const ZLDeltaTime = 15.0;
     [self.player play];
     self.playPauseBtn.selected = YES;
 }
+
+#pragma mark - 设置静音模式下播放声音
+- (void)settingPlaySoundUnderMuteMode {
+    //设置静音模式下播放音乐
+    NSError *sessionError = nil;
+    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+    [audioSession setCategory:AVAudioSessionCategoryPlayback  error:&sessionError];
+}
 #pragma mark - 按钮点击方法
 //播放按钮点击
 
 - (IBAction)playBtn:(UIButton *)sender {
     sender.selected = !sender.selected;
     if (sender.selected) {
+        
         [self.player play];
         [self addProgressTimer];
     }else {
@@ -226,7 +239,8 @@ static CGFloat const ZLDeltaTime = 15.0;
             self.toolbar.alpha = 0;
             self.backButton.alpha = 0;
         } completion:^(BOOL finished) {
-            self.toolbar.hidden = !self.toolbar.hidden;
+            self.toolbar.hidden = YES;
+            [self removeHideToolbarTimer];
         }];
     }else {
         [UIView animateWithDuration:ZLTimeInterval animations:^{
@@ -234,7 +248,7 @@ static CGFloat const ZLDeltaTime = 15.0;
             self.toolbar.alpha = ZLAlpha;
             self.backButton.alpha = ZLAlpha;
         } completion:^(BOOL finished) {
-            
+            [self addHideToolbarTimer];
         }];
     }
     
@@ -247,6 +261,7 @@ static CGFloat const ZLDeltaTime = 15.0;
     [self.player replaceCurrentItemWithPlayerItem:self.playerItem];
     [self playBtn:self.playPauseBtn];
     [self addTimer];
+    [self addHideToolbarTimer];
 }
 
 
@@ -297,7 +312,7 @@ static CGFloat const ZLDeltaTime = 15.0;
 #pragma mark - 定时器
 - (void)addTimer
 {
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(removeSelf) userInfo:nil repeats:YES];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.05f target:self selector:@selector(removeSelf) userInfo:nil repeats:YES];
     [[NSRunLoop mainRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
 }
 - (void)removeTimer
@@ -307,7 +322,7 @@ static CGFloat const ZLDeltaTime = 15.0;
 }
 - (void)addProgressTimer
 {
-    self.progressTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateTimeInfo) userInfo:nil repeats:YES];
+    self.progressTimer = [NSTimer scheduledTimerWithTimeInterval:1.f target:self selector:@selector(updateTimeInfo) userInfo:nil repeats:YES];
     [[NSRunLoop mainRunLoop] addTimer:self.progressTimer forMode:NSRunLoopCommonModes];
 }
 - (void)removeProgressTimer
@@ -315,6 +330,15 @@ static CGFloat const ZLDeltaTime = 15.0;
     [self.progressTimer invalidate];
     self.progressTimer = nil;
 }
+- (void)addHideToolbarTimer {
+    self.hideToolbarTimer = [NSTimer scheduledTimerWithTimeInterval:3.f target:self selector:@selector(hideToolbar) userInfo:nil repeats:NO];
+    [[NSRunLoop mainRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
+}
+- (void)removeHideToolbarTimer {
+    [self.hideToolbarTimer invalidate];
+    self.hideToolbarTimer = nil;
+}
+
 - (void)updateTimeInfo
 {
     self.timeLabel.text = [self timeString];
@@ -328,6 +352,7 @@ static CGFloat const ZLDeltaTime = 15.0;
         [self playBtn:self.playPauseBtn];
         self.playerItem = nil;
         [self removeFromSuperview];
+        
     }
 }
 
@@ -340,6 +365,11 @@ static CGFloat const ZLDeltaTime = 15.0;
             [self removeFromSuperview];
         }
     }
+}
+
+- (void)hideToolbar {
+    [self touchesBegan:nil withEvent:nil];
+    [self removeHideToolbarTimer];
 }
 #pragma mark - @判断view是否显示
 /**
