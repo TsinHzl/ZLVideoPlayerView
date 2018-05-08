@@ -10,6 +10,7 @@
 #import "UIView+ZLVideoPlayerView.h"
 
 @interface ViewController ()
+
 @property (weak, nonatomic) IBOutlet UIView *playView;
 
 @end
