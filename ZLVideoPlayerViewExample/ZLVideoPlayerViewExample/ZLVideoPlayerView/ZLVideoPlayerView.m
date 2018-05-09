@@ -8,7 +8,7 @@
 
 #import "ZLVideoPlayerView.h"
 #import "ZLFullViewController.h"
-#import "AppDelegate.h"
+//#import "AppDelegate.h"
 
 NSString * const ZLVideoPlayerViewIsFullScreenNotification = @"ZLIsFullScreenNotification";
 NSString * const ZLVideoPlayerViewIsFullScreenNotificationParamsName = @"ZLIsFullScreen";
@@ -368,7 +368,7 @@ static CGFloat const ZLDeltaTime = 15.0;
 }
 
 - (void)hideToolbar {
-    [self touchesBegan:nil withEvent:nil];
+    [self touchesBegan:[NSSet set] withEvent:nil];
     [self removeHideToolbarTimer];
 }
 #pragma mark - @判断view是否显示
@@ -396,7 +396,10 @@ static CGFloat const ZLDeltaTime = 15.0;
  @param isFullScreen 是否全屏显示
  */
 - (void)setFullScreen:(BOOL)isFullScreen {
-    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
-    delegate.allowRotation = isFullScreen;
+//    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
+//    delegate.allowRotation = isFullScreen;
+    
+    id dlg = [UIApplication sharedApplication].delegate;
+    [dlg setValue:@(isFullScreen) forKeyPath:@"allowRotation"];
 }
 @end
