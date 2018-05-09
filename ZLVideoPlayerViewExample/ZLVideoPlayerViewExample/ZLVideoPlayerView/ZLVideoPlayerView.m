@@ -284,9 +284,9 @@ static CGFloat const ZLDeltaTime = 15.0;
     NSInteger dMin = (duration - cHour * 60 * 60)/60;
     NSInteger dSec = (NSInteger)duration % 60;
     if (dHour > 0) {
-        return [NSString stringWithFormat:@"%lu:%lu:%lu/%lu:%lu:%lu",cHour,cMin,cSec,dHour,dMin,dSec];
+        return [NSString stringWithFormat:@"%02lu:%02lu:%02lu/%02lu:%02lu:%02lu",cHour,cMin,cSec,dHour,dMin,dSec];
     }else {
-        return [NSString stringWithFormat:@"%lu:%lu/%lu:%lu",cMin,cSec,dMin,dSec];
+        return [NSString stringWithFormat:@"%02lu:%02lu/%02lu:%02lu",cMin,cSec,dMin,dSec];
     }
 }
 - (IBAction)progressValueChage:(id)sender {
