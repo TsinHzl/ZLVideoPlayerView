@@ -9,7 +9,7 @@ spec.ios.deployment_target = '9.0'
 
 spec.license               = 'MIT'
 
-spec.homepage              = "https://github.com/TsinHzl/ZLVideoPlayerView"
+spec.homepage              = 'https://github.com/TsinHzl/ZLVideoPlayerView'
 
 spec.author                = {"TsinHzl" => "tsinhzl@icloud.com" }
 
