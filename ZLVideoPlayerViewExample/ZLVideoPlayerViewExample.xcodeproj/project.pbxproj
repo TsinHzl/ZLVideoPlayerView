@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B93573CB20A281E80005D30E /* UIView+ZLVideoPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B93573C220A281E80005D30E /* UIView+ZLVideoPlayerView.m */; };
+		B93573CC20A281E80005D30E /* ZLFullViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B93573C420A281E80005D30E /* ZLFullViewController.m */; };
+		B93573CD20A281E80005D30E /* ZLPortraitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B93573C620A281E80005D30E /* ZLPortraitViewController.m */; };
+		B93573CE20A281E80005D30E /* ZLVideoPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B93573C820A281E80005D30E /* ZLVideoPlayerView.m */; };
+		B93573CF20A281E80005D30E /* ZLVideoPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B93573C920A281E80005D30E /* ZLVideoPlayerView.xib */; };
+		B93573D020A281E80005D30E /* ZLVideoPlayView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B93573CA20A281E80005D30E /* ZLVideoPlayView.bundle */; };
 		EAEE07181CDDC713005A2A0F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EAEE07171CDDC713005A2A0F /* main.m */; };
 		EAEE071B1CDDC713005A2A0F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EAEE071A1CDDC713005A2A0F /* AppDelegate.m */; };
 		EAEE071E1CDDC713005A2A0F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAEE071D1CDDC713005A2A0F /* ViewController.m */; };
@@ -15,12 +21,6 @@
 		EAEE07261CDDC713005A2A0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAEE07241CDDC713005A2A0F /* LaunchScreen.storyboard */; };
 		EAEE07311CDDC714005A2A0F /* ZLVideoPlayerViewExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EAEE07301CDDC714005A2A0F /* ZLVideoPlayerViewExampleTests.m */; };
 		EAEE073C1CDDC714005A2A0F /* ZLVideoPlayerViewExampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EAEE073B1CDDC714005A2A0F /* ZLVideoPlayerViewExampleUITests.m */; };
-		FAF058E11EEE78BA0044AE24 /* UIView+ZLVideoPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF058D81EEE78BA0044AE24 /* UIView+ZLVideoPlayerView.m */; };
-		FAF058E21EEE78BA0044AE24 /* ZLFullViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF058DA1EEE78BA0044AE24 /* ZLFullViewController.m */; };
-		FAF058E31EEE78BA0044AE24 /* ZLPortraitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF058DC1EEE78BA0044AE24 /* ZLPortraitViewController.m */; };
-		FAF058E41EEE78BA0044AE24 /* ZLVideoPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF058DE1EEE78BA0044AE24 /* ZLVideoPlayerView.m */; };
-		FAF058E51EEE78BA0044AE24 /* ZLVideoPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF058DF1EEE78BA0044AE24 /* ZLVideoPlayerView.xib */; };
-		FAF058E61EEE78BA0044AE24 /* ZLVideoPlayView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FAF058E01EEE78BA0044AE24 /* ZLVideoPlayView.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +41,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B93573C120A281E80005D30E /* UIView+ZLVideoPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZLVideoPlayerView.h"; sourceTree = "<group>"; };
+		B93573C220A281E80005D30E /* UIView+ZLVideoPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZLVideoPlayerView.m"; sourceTree = "<group>"; };
+		B93573C320A281E80005D30E /* ZLFullViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLFullViewController.h; sourceTree = "<group>"; };
+		B93573C420A281E80005D30E /* ZLFullViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLFullViewController.m; sourceTree = "<group>"; };
+		B93573C520A281E80005D30E /* ZLPortraitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPortraitViewController.h; sourceTree = "<group>"; };
+		B93573C620A281E80005D30E /* ZLPortraitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPortraitViewController.m; sourceTree = "<group>"; };
+		B93573C720A281E80005D30E /* ZLVideoPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLVideoPlayerView.h; sourceTree = "<group>"; };
+		B93573C820A281E80005D30E /* ZLVideoPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLVideoPlayerView.m; sourceTree = "<group>"; };
+		B93573C920A281E80005D30E /* ZLVideoPlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZLVideoPlayerView.xib; sourceTree = "<group>"; };
+		B93573CA20A281E80005D30E /* ZLVideoPlayView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZLVideoPlayView.bundle; sourceTree = "<group>"; };
 		EAEE07131CDDC713005A2A0F /* ZLVideoPlayerViewExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZLVideoPlayerViewExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAEE07171CDDC713005A2A0F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EAEE07191CDDC713005A2A0F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -57,16 +67,6 @@
 		EAEE07371CDDC714005A2A0F /* ZLVideoPlayerViewExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZLVideoPlayerViewExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAEE073B1CDDC714005A2A0F /* ZLVideoPlayerViewExampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZLVideoPlayerViewExampleUITests.m; sourceTree = "<group>"; };
 		EAEE073D1CDDC714005A2A0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FAF058D71EEE78BA0044AE24 /* UIView+ZLVideoPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZLVideoPlayerView.h"; sourceTree = "<group>"; };
-		FAF058D81EEE78BA0044AE24 /* UIView+ZLVideoPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZLVideoPlayerView.m"; sourceTree = "<group>"; };
-		FAF058D91EEE78BA0044AE24 /* ZLFullViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLFullViewController.h; sourceTree = "<group>"; };
-		FAF058DA1EEE78BA0044AE24 /* ZLFullViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLFullViewController.m; sourceTree = "<group>"; };
-		FAF058DB1EEE78BA0044AE24 /* ZLPortraitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPortraitViewController.h; sourceTree = "<group>"; };
-		FAF058DC1EEE78BA0044AE24 /* ZLPortraitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPortraitViewController.m; sourceTree = "<group>"; };
-		FAF058DD1EEE78BA0044AE24 /* ZLVideoPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLVideoPlayerView.h; sourceTree = "<group>"; };
-		FAF058DE1EEE78BA0044AE24 /* ZLVideoPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLVideoPlayerView.m; sourceTree = "<group>"; };
-		FAF058DF1EEE78BA0044AE24 /* ZLVideoPlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZLVideoPlayerView.xib; sourceTree = "<group>"; };
-		FAF058E01EEE78BA0044AE24 /* ZLVideoPlayView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZLVideoPlayView.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +94,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B93573C020A281E80005D30E /* ZLVideoPlayerView */ = {
+			isa = PBXGroup;
+			children = (
+				B93573C120A281E80005D30E /* UIView+ZLVideoPlayerView.h */,
+				B93573C220A281E80005D30E /* UIView+ZLVideoPlayerView.m */,
+				B93573C320A281E80005D30E /* ZLFullViewController.h */,
+				B93573C420A281E80005D30E /* ZLFullViewController.m */,
+				B93573C520A281E80005D30E /* ZLPortraitViewController.h */,
+				B93573C620A281E80005D30E /* ZLPortraitViewController.m */,
+				B93573C720A281E80005D30E /* ZLVideoPlayerView.h */,
+				B93573C820A281E80005D30E /* ZLVideoPlayerView.m */,
+				B93573C920A281E80005D30E /* ZLVideoPlayerView.xib */,
+				B93573CA20A281E80005D30E /* ZLVideoPlayView.bundle */,
+			);
+			path = ZLVideoPlayerView;
+			sourceTree = "<group>";
+		};
 		EAEE070A1CDDC713005A2A0F = {
 			isa = PBXGroup;
 			children = (
@@ -117,7 +134,7 @@
 		EAEE07151CDDC713005A2A0F /* ZLVideoPlayerViewExample */ = {
 			isa = PBXGroup;
 			children = (
-				FAF058D61EEE78BA0044AE24 /* ZLVideoPlayView */,
+				B93573C020A281E80005D30E /* ZLVideoPlayerView */,
 				EAEE07191CDDC713005A2A0F /* AppDelegate.h */,
 				EAEE071A1CDDC713005A2A0F /* AppDelegate.m */,
 				EAEE071C1CDDC713005A2A0F /* ViewController.h */,
@@ -155,23 +172,6 @@
 				EAEE073D1CDDC714005A2A0F /* Info.plist */,
 			);
 			path = ZLVideoPlayerViewExampleUITests;
-			sourceTree = "<group>";
-		};
-		FAF058D61EEE78BA0044AE24 /* ZLVideoPlayView */ = {
-			isa = PBXGroup;
-			children = (
-				FAF058D71EEE78BA0044AE24 /* UIView+ZLVideoPlayerView.h */,
-				FAF058D81EEE78BA0044AE24 /* UIView+ZLVideoPlayerView.m */,
-				FAF058D91EEE78BA0044AE24 /* ZLFullViewController.h */,
-				FAF058DA1EEE78BA0044AE24 /* ZLFullViewController.m */,
-				FAF058DB1EEE78BA0044AE24 /* ZLPortraitViewController.h */,
-				FAF058DC1EEE78BA0044AE24 /* ZLPortraitViewController.m */,
-				FAF058DD1EEE78BA0044AE24 /* ZLVideoPlayerView.h */,
-				FAF058DE1EEE78BA0044AE24 /* ZLVideoPlayerView.m */,
-				FAF058DF1EEE78BA0044AE24 /* ZLVideoPlayerView.xib */,
-				FAF058E01EEE78BA0044AE24 /* ZLVideoPlayView.bundle */,
-			);
-			path = ZLVideoPlayView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,8 +283,8 @@
 				EAEE07261CDDC713005A2A0F /* LaunchScreen.storyboard in Resources */,
 				EAEE07231CDDC713005A2A0F /* Assets.xcassets in Resources */,
 				EAEE07211CDDC713005A2A0F /* Main.storyboard in Resources */,
-				FAF058E61EEE78BA0044AE24 /* ZLVideoPlayView.bundle in Resources */,
-				FAF058E51EEE78BA0044AE24 /* ZLVideoPlayerView.xib in Resources */,
+				B93573D020A281E80005D30E /* ZLVideoPlayView.bundle in Resources */,
+				B93573CF20A281E80005D30E /* ZLVideoPlayerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,11 +310,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAEE071E1CDDC713005A2A0F /* ViewController.m in Sources */,
-				FAF058E41EEE78BA0044AE24 /* ZLVideoPlayerView.m in Sources */,
-				FAF058E21EEE78BA0044AE24 /* ZLFullViewController.m in Sources */,
+				B93573CE20A281E80005D30E /* ZLVideoPlayerView.m in Sources */,
+				B93573CC20A281E80005D30E /* ZLFullViewController.m in Sources */,
 				EAEE071B1CDDC713005A2A0F /* AppDelegate.m in Sources */,
-				FAF058E31EEE78BA0044AE24 /* ZLPortraitViewController.m in Sources */,
-				FAF058E11EEE78BA0044AE24 /* UIView+ZLVideoPlayerView.m in Sources */,
+				B93573CD20A281E80005D30E /* ZLPortraitViewController.m in Sources */,
+				B93573CB20A281E80005D30E /* UIView+ZLVideoPlayerView.m in Sources */,
 				EAEE07181CDDC713005A2A0F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
